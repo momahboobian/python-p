@@ -1,25 +1,30 @@
-print('Starting factorial calculation program')
-number = input('Please input the number: ')
+print('Starting Factorial Calculation')
 
-# Validate that the user entered a non-negative integer value
-if number.isnumeric():
-    print(f'The number to calculate functional for is {number}')
+while True:
+    input_number = input('Please input the number: ')
 
-    num = int(number) # Convert the input string to an integer
-
-    if num == 0:
-        print('0! factorial is 1')
+    if input_number.isnumeric():
+        print('Valid Input')
+        break
     else:
-        factorial = 1
-        for i in range(1, num + 1):
-            factorial = factorial * i
-        print(number + '! factorial is', str(factorial))
+        print('Invalid Input')
 
+print(f'The number to calculate the factorial for is {input_number}')
+
+number = int(input_number)
+
+if number == 0:
+    print('0! factorial is 1')
+elif number == 1:
+    print('1! factorial is 1')
 else:
-    print('Not an integer number')
+    # Algorithm to calculate the factorial for an integer number
+    factorial = 1
+    for i in range(1, number + 1):
+        factorial = factorial * i
+    print(f'{number}! is {factorial}')
 
-
-
+print('Done')
 
 # age = (int(input('Please input your age: ')))
 # print(f'You are {age}')
