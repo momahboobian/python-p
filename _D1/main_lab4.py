@@ -1,57 +1,40 @@
-print('Starting Factorial Calculation')
+readings = []
+continue_to_enter_data = True
 
-while True:
-    input_number = input('Please input the number: ')
+while continue_to_enter_data:
+    input_string = input("Please enter a temperature reading (-1 to end): ")
 
-    if input_number.isnumeric():
-        print('Valid Input')
-        break
+    if input_string == '-1':
+        continue_to_enter_data = False
     else:
-        print('Invalid Input')
+        # Check for validity of input
+        if input_string.count('.') == 1 and input_string.replace('.', '').isnumeric():
+            temperature = float(input_string)
+            readings.append(temperature)
+            print(f"Added temperature {temperature:.2f} to readings.")
+        else:
+            print("Invalid input. Must be a valid positive floating-point number.")
 
-print(f'The number to calculate the factorial for is {input_number}')
+# Display the entered temperature readings
+print("Temperature readings input:", readings)
 
-number = int(input_number)
+# Print the length of the list
+print("Number of readings:", len(readings))
 
-if number == 0:
-    print('0! factorial is 1')
-elif number == 1:
-    print('1! factorial is 1')
-else:
-    # Algorithm to calculate the factorial for an integer number
-    factorial = 1
-    for i in range(1, number + 1):
-        factorial = factorial * i
-    print(f'{number}! is {factorial}')
 
-print('Done')
+readings.reverse()
+print('Temperature readings in reverse:', readings)
 
-# age = (int(input('Please input your age: ')))
-# print(f'You are {age}')
-#
-#
-# if age < 13:
-#
-#     print('Child!')
-#     print('-----')
-# elif 12 < age < 20:
-#     print('Teenager')
-# else:
-#     print('Adult')
-#
-# print('Done')
-#
-# status = 'Teenager' if 12 > age < 18 else 'not teenager'
-# print(status)
-#
-#
-# validData = False
-# print(validData)
-#
-# while not validData:
-#     age = int(input('Please enter your age: '))
-#     if age < 0 or age > 120:
-#         print('Invalid age')
-#         print(validData, '', end='')
-#     else:
-#         break
+print(f'There are {readings.count(0.0)} Zero readings')
+
+readings_copy = readings.copy()
+print('Copy of temperature readings:', readings_copy)
+
+readings_copy.append(5.5)
+print('Modified copy of temperature readings:', readings_copy)
+
+print('Original Temperature readings:', readings)
+print('Copy of Original Temperature readings:', readings_copy)
+
+print(f'Popping element from end of copy list: {readings_copy.pop()}')
+print('Modified copy after popping:', readings_copy)
