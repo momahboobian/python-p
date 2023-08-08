@@ -33,10 +33,11 @@ class TemperatureReading:
         if new_scale == self.scale:
             return self  # No need to convert if scales are the same
 
-        if new_scale == self.CELSIUS:
-            new_temp = (self.temp - 32) * 5 / 9
-        elif new_scale == self.FAHRENHEIT:
+        new_temp = None
+        if self.scale == self.CELSIUS and new_scale == self.FAHRENHEIT:
             new_temp = (self.temp * 9 / 5) + 32
+        elif self.scale == self.FAHRENHEIT and new_scale == self.CELSIUS:
+            new_temp = (self.temp - 32) * 5 / 9
         else:
             raise ValueError("Invalid scale")
 
@@ -61,11 +62,11 @@ print('Done', ("." * 30))
 
 # Add string representation behaviour to the class
 print("\nUsing __str__:")
-print(*readings)
+print(*readings)  # Unpack the reading
 print(readings[1])
 
 
-# print('Done', ("." * 30))
+print('Done', ("." * 30))
 
 
 # Print the list of readings
@@ -84,10 +85,13 @@ print(reading_celsius)
 print("\nConverted Reading:")
 print(converted_reading_fahrenheit)
 
+print('Done', ("." * 30))
+
 
 # Utility function to extract temperature from a TemperatureReading object
 def extract_readings(reading):
     return reading.temp
+
 
 # Example usage
 temp1 = TemperatureReading(13.5, '01/05/20', 'London', TemperatureReading.CELSIUS)
