@@ -27,3 +27,12 @@ for fahrenheit in fahrenheit_temperatures:
 print(f'Converted Celsius Temperatures: {converted_celsius_temperatures}')
 print('Done', ("-" * 30))
 
+
+# Select all temperatures above 14.0
+temperatures = [25.0, 30.5, 15.8, 20.2, 10.0, 18.7]
+higher_temperatures = [temp for temp in temperatures if temp > 14.0]
+
+print('Starting')
+print(f'Temperatures above 14.0: {higher_temperatures}')
+print('Done', ("-" * 30))
+
