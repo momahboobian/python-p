@@ -36,3 +36,9 @@ print('Starting')
 print(f'Temperatures above 14.0: {higher_temperatures}')
 print('Done', ("-" * 30))
 
+# Convert all the temperatures above 14.0 to Fahrenheit
+converted_temperatures = [celsius_to_fahrenheit(temp) for temp in higher_temperatures]
+
+print('Starting')
+print(f'Fahrenheit Temperatures above 14.0c: {converted_temperatures}')
+print('Done', ("-" * 30))
