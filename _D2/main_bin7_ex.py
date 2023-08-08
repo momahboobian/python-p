@@ -26,7 +26,7 @@ class Person:
 
 print('Starting')
 
-p = Person('John', age=21)
+p = Person('John', 21)
 print(p.name, p.age, p.address)
 p.name = 'Bob'
 print(p.name, p.age, p.address)
