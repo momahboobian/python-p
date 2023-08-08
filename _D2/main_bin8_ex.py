@@ -13,11 +13,16 @@ class Quantity:
         else:
             return None
 
+    def __lt__(self, other):
+        return self.value < other.value
+
     def __sub__(self, other):
         return Quantity(self.value - other.value)
 
+
 def adder(x, y):
     return x + y
+
 
 print('Starting', ("." * 30))
 
@@ -39,3 +44,7 @@ print('Done', ("." * 30))
 
 print(adder(q1, q2))
 print(adder(q1, 9))
+
+print("." * 30)
+# Comparison Operators
+print(q1 < q2)
