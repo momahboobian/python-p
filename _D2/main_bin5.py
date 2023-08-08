@@ -88,3 +88,15 @@ def data_range(readings):
 min_temp, max_temp = data_range(readings)
 print(f'Range of temperatures from {min_temp} to {max_temp}')
 print('Done', ("-" * 30))
+
+
+# Convert Celsius to Fahrenheit
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9 / 5) + 32
+
+
+temperature_celsius = 13.5
+temperature_fahrenheit = celsius_to_fahrenheit(temperature_celsius)
+
+print(f'{temperature_celsius} Celsius as Fahrenheit: {temperature_fahrenheit:.2f}')
+print('Done', ("-" * 30))
