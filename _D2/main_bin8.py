@@ -18,6 +18,21 @@ class TemperatureReading:
     def __eq__(self, other):
         return self.temp == other.temp
 
+    def __ne__(self, other):
+        return self.temp != other.temp
+
+    def __gt__(self, other):
+        return self.temp > other.temp
+
+    def __ge__(self, other):
+        return self.temp >= other.temp
+
+    def __lt__(self, other):
+        return self.temp < other.temp
+
+    def __le__(self, other):
+        return self.temp <= other.temp
+
     def __add__(self, other):
         if isinstance(other, (int, float)):
             new_value = self.temp + other
@@ -42,6 +57,7 @@ print('Starting', ("." * 30))
 
 temperature1 = TemperatureReading(20.0, "2023-08-07", "City A", TemperatureReading.CELSIUS)
 temperature2 = TemperatureReading(68.0, "2023-08-07", "City B", TemperatureReading.FAHRENHEIT)
+another_temperature = TemperatureReading(14.6, '05/05/20', 'London')
 
 # Add temperatures together
 sum_temperature = temperature1 + temperature2
@@ -69,3 +85,40 @@ print("Subtract a float from a temperature:", new_temperature4)
 
 
 print('Done', ("." * 30))
+
+
+# Define Further operators
+print(temperature1 != temperature2)
+print(temperature1 > temperature2)
+print(temperature1 >= temperature2)
+print(temperature1 == temperature2)
+print(temperature1 != temperature2)
+print(temperature1 < temperature2)
+print(temperature1 <= temperature2)
+
+print(temperature1 != another_temperature)
+print(temperature1 > another_temperature)
+print(temperature1 >= another_temperature)
+print(temperature1 == another_temperature)
+print(temperature1 != another_temperature)
+print(temperature1 < another_temperature)
+print(temperature1 <= another_temperature)
+
+print('Done', ("." * 30))
+
+
+# Revise the sort functions
+
+# Create a list of temperature readings
+readings = [
+    TemperatureReading(13.5, '01/05/20', 'London', TemperatureReading.CELSIUS),
+    TemperatureReading(12.6, '02/05/20', 'London', TemperatureReading.CELSIUS),
+    TemperatureReading(15.3, '03/05/20', 'London', TemperatureReading.CELSIUS),
+    # ... other readings ...
+]
+
+# Sort the list of temperature readings using the default sorting order (ascending)
+sorted_readings = sorted(readings)
+print("Sorted temperature readings:")
+for reading in sorted_readings:
+    print(reading)
