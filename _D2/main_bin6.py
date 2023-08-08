@@ -76,9 +76,8 @@ result = reduce(lambda total, value: total + value, readings)
 print(f'Total value of all readings is {result}')
 
 # Convert all readings above 14.0 to Fahrenheit
-converted_temperatures = list(map(celsius_to_fahrenheit, filter(lambda r: r > 15.5, readings)))
+converted_temperatures = list(map(celsius_to_fahrenheit,
+                                  filter(lambda r: r > 14.0, readings)))
 print(f'Fahrenheit Temperatures above 14.0c: {converted_temperatures}')
-
-print('Done')
 
 print('Done', ("-" * 30))
