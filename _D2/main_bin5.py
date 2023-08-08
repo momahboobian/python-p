@@ -6,11 +6,10 @@ def print_msg(massage):
 
 
 print('Starting')
-
 print_msg('Hellow word')
 print_msg('Good bye')
-
 print('Done', ("-" * 30))
+
 
 def greeter(name,
             title='Mx',
@@ -29,3 +28,15 @@ greeter(title='Ms',
         message='Buenus Dias')
 print('Done', ("-" * 30))
 
+
+def adder(x='XXX', y='YYY'):
+    if isinstance(x, (int, float)) and isinstance(y, (int, float)):
+        return x + y
+    else:
+        return str(x) + str(y)
+
+print('Starting')
+print(adder(2, 3))
+print(adder('John', 3))
+
+print('Done', ("-" * 30))
