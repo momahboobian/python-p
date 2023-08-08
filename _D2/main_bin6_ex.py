@@ -63,8 +63,6 @@ even_data3 = list(filter(
 print(even_data3)
 
 
-
-
 result = []
 for item in data:
     temp = item * item
@@ -79,3 +77,13 @@ results3 = list(map(multplier, data))
 print(results3)
 
 print('Done', ("-" * 30))
+
+
+# Functional Style nesting
+results2 = (list(map(multplier,
+                 filter(is_even, data))))
+print(results2)
+
+results3 = (list(map(lambda x: x * x,
+                     filter(lambda x: x % 2 == 0, data))))
+print(results3)
