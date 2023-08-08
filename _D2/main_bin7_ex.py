@@ -23,7 +23,8 @@ print(p.name, p.age, p.address)
 b = Person('Melly', age=19)
 b.address = 'Manchester'
 print(b)
-
+print('id(b):', id(b))
+print(b.__doc__)
 
 data = [b, b]
 print(*data)
