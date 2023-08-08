@@ -25,5 +25,45 @@ def median(data):
         # If the data length is even, calculate the average of the two middle values
         return (sorted_data[index] + sorted_data[index + 1]) / 2.0
 
+
 # Print the median
 print(f'Median temperature value = {median(readings)}')
+print('Done', ("-" * 30))
+
+
+# minimum and maximum functions
+def minimum(readings, start=0):
+    if start < 0 or start >= len(readings):
+        return None  # Invalid start position
+
+    min_value = float('inf')  # Initialize with positive infinity
+
+    for i in range(start, len(readings)):
+        if readings[i] < min_value:
+            min_value = readings[i]
+
+    return min_value
+
+
+print(f'Min temp in list = {minimum(readings)}')
+print(f'Min temp in list starting position 4 = {minimum(readings, 3)}')
+print('Done', ("-" * 30))
+
+
+def maximum(readings, start=0):
+    if start < 0 or start >= len(readings):
+        return None  # Invalid start position
+
+    max_value = float('-inf')  # Initialize with negative infinity
+
+    for i in range(start, len(readings)):
+        if readings[i] > max_value:
+            max_value = readings[i]
+
+    return max_value
+
+
+print(f'Max temp in list = {maximum(readings)}')
+print(f'Max temp in list starting position 4 = {maximum(readings, 3)}')
+print('Done', ("-" * 30))
+
