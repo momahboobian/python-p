@@ -67,3 +67,24 @@ print(f'Max temp in list = {maximum(readings)}')
 print(f'Max temp in list starting position 4 = {maximum(readings, 3)}')
 print('Done', ("-" * 30))
 
+
+# Return a data range tuple
+def data_range(readings):
+    if not readings:
+        return None  # Return None if the list is empty
+
+    min_temp = float('inf')
+    max_temp = float('-inf')
+
+    for temperature in readings:
+        if temperature < min_temp:
+            min_temp = temperature
+        if temperature > max_temp:
+            max_temp = temperature
+
+    return min_temp, max_temp  # Return a tuple
+
+
+min_temp, max_temp = data_range(readings)
+print(f'Range of temperatures from {min_temp} to {max_temp}')
+print('Done', ("-" * 30))
