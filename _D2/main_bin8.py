@@ -1,7 +1,4 @@
 class TemperatureReading:
-    """
-    Add an equals method
-    """
 
     CELSIUS = "Celsius"
     FAHRENHEIT = "Fahrenheit"
@@ -50,7 +47,6 @@ class TemperatureReading:
         else:
             raise TypeError("Unsupported operand type for -")
         return TemperatureReading(new_value, self.date, self.location, self.scale)
-
 
 
 print('Starting', ("." * 30))
