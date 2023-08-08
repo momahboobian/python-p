@@ -1,42 +1,29 @@
-def print_msg(massage):
-    """Print out a hello world massage,
-    to use ut call:
-    print_msg"""
-    print(massage)
+readings = [13.5, 11.1, 17.5, 12.6, 15.3, 12.2, 16.6, 14.6]
+
+
+# Step 1: Implement a function to average the temperatures
+def average(data):
+    return sum(data) / len(data)
 
 
 print('Starting')
-print_msg('Hellow word')
-print_msg('Good bye')
+print(average(readings))
+print('Average temperature = {:.2f}'.format(average(readings)))
+print(f'Average temperature = {average(readings):.2f}')
 print('Done', ("-" * 30))
 
 
-def greeter(name,
-            title='Mx',
-            prompt='Welcome',
-            message='Hello'):
-    print(f'{prompt} {title} {name} -  {message}')
+# Step 2: Calculate the median of the data
+def median(data):
+    sorted_data = sorted(data)  # Sort the data
+    data_length = len(data)  # Get the length of the data
+    index = (data_length - 1) // 2  # Calculate the index for the median
 
-
-print('Starting')
-greeter('John', 'Dr')
-greeter('Denise')
-greeter('Adam', message='Hi', title='Mr')
-greeter(title='Ms',
-        prompt='Hola',
-        name='Natalia',
-        message='Buenus Dias')
-print('Done', ("-" * 30))
-
-
-def adder(x='XXX', y='YYY'):
-    if isinstance(x, (int, float)) and isinstance(y, (int, float)):
-        return x + y
+    if data_length % 2 == 1:  # Check if the data length is odd
+        return sorted_data[index]  # Return the value at the calculated index
     else:
-        return str(x) + str(y)
+        # If the data length is even, calculate the average of the two middle values
+        return (sorted_data[index] + sorted_data[index + 1]) / 2.0
 
-print('Starting')
-print(adder(2, 3))
-print(adder('John', 3))
-
-print('Done', ("-" * 30))
+# Print the median
+print(f'Median temperature value = {median(readings)}')
