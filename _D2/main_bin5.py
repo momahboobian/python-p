@@ -5,7 +5,6 @@ readings = [13.5, 11.1, 17.5, 12.6, 15.3, 12.2, 16.6, 14.6]
 def average(data):
     return sum(data) / len(data)
 
-
 print('Starting')
 print(average(readings))
 print('Average temperature = {:.2f}'.format(average(readings)))
