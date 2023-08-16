@@ -1,6 +1,7 @@
 readings = [13.5, 11.1, 17.5, 12.6, 15.3, 12.2, 16.6, 14.6]
 
 
+
 # Step 1: Implement a function to average the temperatures
 def average(data):
     return sum(data) / len(data)
